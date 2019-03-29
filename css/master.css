@@ -1,0 +1,14 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+.patron{
+  background-color: #ffffff;
+  margin: -20px;
+}
+footer{
+  height: 200px;
+  background-color: #2d3436;
+  color: #ffffff;
+}

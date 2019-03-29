@@ -1,0 +1,33 @@
+.pestana{
+    width: 85%;
+    
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jumbo{
+    width: 100% !important;
+    
+}
+
+.input{
+    width: 70%;
+    
+}
+
+.button{
+    width: 20%;
+    
+}
+
+.busqueda{
+    width: 90%;
+    margin-top: 10%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+   
+    
+}
+

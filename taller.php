@@ -1,3 +1,8 @@
+<?php
+  require_once 'clases/class.archivo.php';
+  require_once 'clases/class.evento.php';
+  require_once 'clases/manejadorEvento.php';
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -65,6 +70,13 @@
 
 <?php
   if(isset($_GET["search"])){
+    $mEventos = new ManejadorEvento;
+    $eventos = array();
+    
+
+    $eventos = $mEventos->obtenerEventos($_GET["search"]);
+    
+    echo count($eventos);
 
 ?>
 <br>
@@ -95,28 +107,39 @@
 
 <div class="tab-content pestana" id="contenido">
   <div id="home" class="tab-pane fade show active">
-    <h3>Placa: P000 000</h3>
+    <h3><?php
+    echo $_GET["search"];
+    ?></h3>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-  </ol>
-  <div class="carousel-inner">
+  <?php
+    $longitud = count($eventos);
+    for($i=0; $i<$longitud; $i++){
+      ?>      
+      <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i ?>"
+      <?php if($i==0) echo 'class="active"'?>></li>
+      <?php
+
+    }
+    ?>
+    </ol>
+    <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(2).jpg" alt="First slide">
+      <img class="d-block w-100" src="<?php echo $eventos[0]->getArchivo()->getRuta() ?>">
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(4).jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(6).jpg" alt="Third slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(94).jpg" alt="Forth slide">
-    </div>
+    <?php
+    for($i=1; $i<$longitud; $i++){
+      ?>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="<?php echo $eventos[$i]->getArchivo()->getRuta() ?>" alt="<?php echo $eventos[$i]->getArchivo->getNombre ?>">
+      </div>
+      <?php
+
+    }
+
+    
+  ?> 
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

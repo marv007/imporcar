@@ -1,8 +1,9 @@
 <?php
+require_once 'class.archivo.php';
 
     class Evento{
         private $idEvento;
-        private $idArchivo;
+        private $archivo;
         private $idCarro;
         private $titulo;
         private $descripcion;
@@ -11,81 +12,186 @@
         private $inicio;
         private $final;
 
-        //getters
+        
 
-        public function getIdEvento(){
-            return $this->$idEvento;
+        /**
+         * Get the value of idEvento
+         */ 
+        public function getIdEvento()
+        {
+                return $this->idEvento;
         }
 
-        public function getIdArchivo(){
-            return $this->$idArchivo;
+        /**
+         * Set the value of idEvento
+         *
+         * @return  self
+         */ 
+        public function setIdEvento($idEvento)
+        {
+                $this->idEvento = $idEvento;
+
+                return $this;
         }
 
-        public function getIdCarro(){
-            return $this->$idCarro;
+        /**
+         * Get the value of archivo
+         */ 
+        public function getArchivo()
+        {
+                return $this->archivo;
         }
 
-        public function getTitulo(){
-            return $this->$titulo;
+        /**
+         * Set the value of archivo
+         *
+         * @return  self
+         */ 
+        public function setArchivo($archivo)
+        {
+                $this->archivo = $archivo;
+
+                return $this;
         }
 
-        public function getDescripcion(){
-            return $this->$descripcion;
+        /**
+         * Get the value of idCarro
+         */ 
+        public function getIdCarro()
+        {
+                return $this->idCarro;
         }
 
-        public function getColor(){
-            return $this->$color;
+        /**
+         * Set the value of idCarro
+         *
+         * @return  self
+         */ 
+        public function setIdCarro($idCarro)
+        {
+                $this->idCarro = $idCarro;
+
+                return $this;
         }
 
-        public function getTextColor(){
-            return $this->$textColor;
+        /**
+         * Get the value of titulo
+         */ 
+        public function getTitulo()
+        {
+                return $this->titulo;
         }
 
-        public function getInicio(){
-            return $this->$inicio;
+        /**
+         * Set the value of titulo
+         *
+         * @return  self
+         */ 
+        public function setTitulo($titulo)
+        {
+                $this->titulo = $titulo;
+
+                return $this;
         }
 
-        public function getFinal(){
-            return $this->$final;
+        /**
+         * Get the value of descripcion
+         */ 
+        public function getDescripcion()
+        {
+                return $this->descripcion;
         }
 
-        //setters
+        /**
+         * Set the value of descripcion
+         *
+         * @return  self
+         */ 
+        public function setDescripcion($descripcion)
+        {
+                $this->descripcion = $descripcion;
 
-        public function setIdEvento($idEvento){
-            $this->idEvento = $idEvento;
+                return $this;
         }
 
-        public function setIdArchivo($idArchivo){
-            $this->idArchivo = $idArchivo;
+        /**
+         * Get the value of color
+         */ 
+        public function getColor()
+        {
+                return $this->color;
         }
 
-        public function setIdCarro($idCarro){
-            $this->idCarro = $idCarro;
+        /**
+         * Set the value of color
+         *
+         * @return  self
+         */ 
+        public function setColor($color)
+        {
+                $this->color = $color;
+
+                return $this;
         }
 
-        public function setTitulo($titulo){
-            $this->titulo = $titulo;
+        /**
+         * Get the value of textColor
+         */ 
+        public function getTextColor()
+        {
+                return $this->textColor;
         }
 
-        public function setDescripcion($descripcion){
-            $this->descripcion = $descripcion;
+        /**
+         * Set the value of textColor
+         *
+         * @return  self
+         */ 
+        public function setTextColor($textColor)
+        {
+                $this->textColor = $textColor;
+
+                return $this;
         }
 
-        public function setColor($color){
-            $this->color = $color;
+        /**
+         * Get the value of inicio
+         */ 
+        public function getInicio()
+        {
+                return $this->inicio;
         }
 
-        public function setTextColor($texColor){
-            $this->textColor = $textColor;
+        /**
+         * Set the value of inicio
+         *
+         * @return  self
+         */ 
+        public function setInicio($inicio)
+        {
+                $this->inicio = $inicio;
+
+                return $this;
         }
 
-        public function setInicio($inicio){
-            $this->inicio = $inicio;
+        /**
+         * Get the value of final
+         */ 
+        public function getFinal()
+        {
+                return $this->final;
         }
 
-        public function setFinal($final){
-            $this->final = $final;
-        }
+        /**
+         * Set the value of final
+         *
+         * @return  self
+         */ 
+        public function setFinal($final)
+        {
+                $this->final = $final;
 
+                return $this;
+        }
     }
 ?>
